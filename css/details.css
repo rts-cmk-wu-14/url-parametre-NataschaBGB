@@ -19,6 +19,26 @@ body {
 article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+}
+.back a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .image {
@@ -29,16 +49,29 @@ img {
     width: 100%;
     object-fit: cover;
 }
-.fav {
+.heart {
     position: absolute;
     top: 10px;
     right: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
+    &:hover {
+        cursor: pointer;
+    }
 }
-.fav svg {
+.heart {
     height: 30px;
+}
+.active, .inactive {
+    background-image: url('../img/redheart.png');
+    height: 30px;
+    width: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.inactive {
+    background-image: url('../img/blackheart.png');
 }
 
 section {
